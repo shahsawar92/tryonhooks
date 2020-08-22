@@ -1,25 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import usevalue from './valuecontext';
+import Parent from './parent';
 
 function App() {
+  // let value=99;
+  let value = useState(39);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <usevalue.Provider value={value}>
+      <div>
+        hello world
+        <Parent></Parent>
+    
+
+
     </div>
+    </usevalue.Provider>
+   
+   
   );
 }
 
